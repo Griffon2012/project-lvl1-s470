@@ -1,0 +1,5 @@
+{
+    "name": "griffon/hexlet-project",
+    "bin":["bin/brain-games"],
+    "require": {}
+}
