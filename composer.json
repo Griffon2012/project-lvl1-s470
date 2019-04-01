@@ -1,6 +1,7 @@
 {
     "name": "griffon/hexlet-project",
-    "bin":["bin/brain-games"],
+    "bin": ["bin/brain-games"],
+    "type": "library",
     "minimum-stability": "dev",
     "require": {}
 }
