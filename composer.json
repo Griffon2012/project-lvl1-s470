@@ -5,6 +5,9 @@
     "require": {
         "wp-cli/php-cli-tools": "^0.11.11"
     },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "^3.4"
+    },
     "authors": [
         {
             "name": "Grigory",
@@ -15,13 +18,12 @@
     "description": "Hexlet project - brain-games",
     "keywords": ["hexlet", "games"],
     "autoload": {
-    	"files": [
-    		"src/Cli.php"
-		] 
+        "files": [
+            "src/Cli.php",
+            "src/Parity.php"
+        ] 
     },
-    "require-dev": {
-        "squizlabs/php_codesniffer": "^3.4"
-    },
+
     "scripts": {
         "phpcs": "phpcs"
     }
