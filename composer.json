@@ -18,5 +18,10 @@
     	"files": [
     		"src/Cli.php"
 		] 
+    },
+    "require-dev": {
+    },
+    "scripts": {
+        "phpcs": "phpcs"
     }
 }
