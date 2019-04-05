@@ -1,3 +1,5 @@
+
+[![Build Status](https://travis-ci.org/Griffon2012/project-lvl1-s470.svg?branch=master)](https://travis-ci.org/Griffon2012/project-lvl1-s470)
 [![Code Climate](https://codeclimate.com/github/Griffon2012/project-lvl1-s470/badges/gpa.svg)](https://codeclimate.com/github/Griffon2012/project-lvl1-s470)
 [![Issue Count](https://codeclimate.com/github/Griffon2012/project-lvl1-s470/badges/issue_count.svg)](https://codeclimate.com/github/Griffon2012/project-lvl1-s470)
 [![Test Coverage](https://codeclimate.com/github/Griffon2012/project-lvl1-s470/badges/coverage.svg)](https://codeclimate.com/github/Griffon2012/project-lvl1-s470/coverage)
