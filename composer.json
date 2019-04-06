@@ -1,6 +1,6 @@
 {
     "name": "griffon/hexlet-project",
-    "bin": ["bin/brain-games","bin/brain-even","bin/brain-calc"],
+    "bin": ["bin/brain-games","bin/brain-even","bin/brain-calc", "bin/brain-gcd"],
     "type": "project",
     "require": {
         "wp-cli/php-cli-tools": "^0.11.11"
@@ -22,6 +22,7 @@
             "src/Games/Cli.php",
             "src/Games/Parity.php",
             "src/Games/Calc.php",
+            "src/Games/Gcd.php",
             "src/Main.php"
         ] 
     },
