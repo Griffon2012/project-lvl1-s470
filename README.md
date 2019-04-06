@@ -6,6 +6,8 @@
 
 https://asciinema.org/a/zra2y9emF4R00qUmza54b2FyT
 
-https://asciinema.org/a/f8oHGDVRlyhRhWiXqrH9LWfdV
+четность https://asciinema.org/a/f8oHGDVRlyhRhWiXqrH9LWfdV
 
-https://asciinema.org/a/2ZKmDS4p5qjfgvcxYvb5DNs7i
+калькулятор https://asciinema.org/a/2ZKmDS4p5qjfgvcxYvb5DNs7i
+
+наибольший общий делитель https://asciinema.org/a/3aM5w9J0nT3j0XiWqt208lMtw
