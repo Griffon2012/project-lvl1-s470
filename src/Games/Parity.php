@@ -1,8 +1,6 @@
 <?php
 namespace BrainGames\Games\Parity;
 
-use function BrainGames\Main\getName;
-
 function getGreeting()
 {
     return 'Answer "yes" if number even otherwise answer "no".';

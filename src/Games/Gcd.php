@@ -1,8 +1,6 @@
 <?php
 namespace BrainGames\Games\Gcd;
 
-use function BrainGames\Main\getName;
-
 function getGreeting()
 {
     return 'Find the greatest common divisor of given numbers.';
