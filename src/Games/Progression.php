@@ -8,24 +8,24 @@ function getGreeting()
 
 function getQuestionAndAnswer()
 {
-    $countElementInProgression = 10;
-    $stepProgression = rand(1, 5);
+    $countElemInProgression = 10;
+    $step = rand(1, 5);
     $firstElement = rand(1, 25);
-    $numberDeleteElement = rand(1, $countElementInProgression);
+    $numberDeleteElem = rand(1, $countElemInProgression);
 
-    $expectedResponse = $stepProgression * ($numberDeleteElement - 1) + $firstElement;
+    $expectedResponse = $step * ($numberDeleteElem - 1) + $firstElement;
 
-    $question = getStringWithoutElement($firstElement, $stepProgression, $countElementInProgression, $numberDeleteElement);
+    $question = getStringWithoutElement($firstElement, $step, $countElemInProgression, $numberDeleteElem);
 
     return ['question' => $question, 'answer' => (string) $expectedResponse];
 }
 
-function getStringWithoutElement($firstElement, $stepProgression, $countElementInProgression, $numberDeleteElement)
+function getStringWithoutElement($firstElement, $step, $countElemInProgression, $numberDeleteElem)
 {
-    $lastElement = $firstElement + ($stepProgression * ($countElementInProgression - 1));
+    $lastElement = $firstElement + ($step * ($countElemInProgression - 1));
     $progression = [];
-    for ($i = $firstElement; $i <= $lastElement; $i += $stepProgression) {
-        if (count($progression) === $numberDeleteElement - 1) {
+    for ($i = $firstElement; $i <= $lastElement; $i += $step) {
+        if (count($progression) === $numberDeleteElem - 1) {
             $progression[] = '..';
         } else {
             $progression[] = (string) $i;
