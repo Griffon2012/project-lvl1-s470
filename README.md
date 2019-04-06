@@ -11,3 +11,5 @@ https://asciinema.org/a/zra2y9emF4R00qUmza54b2FyT
 калькулятор https://asciinema.org/a/2ZKmDS4p5qjfgvcxYvb5DNs7i
 
 наибольший общий делитель https://asciinema.org/a/3aM5w9J0nT3j0XiWqt208lMtw
+
+прогрессия https://asciinema.org/a/iUpGkG1CyFKmeK16oDRv4fG66
