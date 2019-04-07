@@ -4,18 +4,16 @@ namespace BrainGames\Games\Progression;
 use function BrainGames\Main\startGame;
 
 const ANNOTATION = 'What number is missing in the progression?';
-const COUNT_ELEMENT = 10;
+const LENGTH_PROGRESSION = 10;
 
 function run()
 {
     $getQuestionAndAnswer = function () {
         $step = rand(1, 5);
-        $firstElement = rand(1, 25);
-        $hiddenIndexNumber = rand(0, (COUNT_ELEMENT - 1));
-    
-        $correctAnswer = (string) ($step * $hiddenIndexNumber + $firstElement);
-    
-        $question = implode(' ', getProgressionWithHiddenElement($firstElement, $step, $hiddenIndexNumber));
+        $start = rand(1, 25);
+        $hiddenIndexNumber = rand(0, (LENGTH_PROGRESSION - 1));
+        $correctAnswer = (string) ($step * $hiddenIndexNumber + $start);
+        $question = implode(' ', getProgressionWithHiddenElement($start, $step, $hiddenIndexNumber));
     
         return [$question, $correctAnswer];
     };
@@ -23,14 +21,14 @@ function run()
     startGame(ANNOTATION, $getQuestionAndAnswer);
 }
 
-function getProgressionWithHiddenElement($firstElement, $step, $hiddenIndexNumber)
+function getProgressionWithHiddenElement($start, $step, $hiddenIndexNumber)
 {
     $progression = [];
-    for ($i = 0; $i < COUNT_ELEMENT; $i++) {
+    for ($i = 0; $i < LENGTH_PROGRESSION; $i++) {
         if ($i === $hiddenIndexNumber) {
             $progression[] = '..';
         } else {
-            $progression[] = (string) ($firstElement + $step * $i);
+            $progression[] = (string) ($start + $step * $i);
         }
     }
     return $progression;

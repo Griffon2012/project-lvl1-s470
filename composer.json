@@ -1,6 +1,12 @@
 {
     "name": "griffon/hexlet-project",
-    "bin": ["bin/brain-games","bin/brain-even","bin/brain-calc","bin/brain-gcd","bin/brain-progression","bin/brain-prime"],
+    "bin": [
+        "bin/brain-even",
+        "bin/brain-calc",
+        "bin/brain-gcd",
+        "bin/brain-progression",
+        "bin/brain-prime"
+    ],
     "type": "project",
     "require": {
         "wp-cli/php-cli-tools": "^0.11.11"
@@ -19,7 +25,6 @@
     "keywords": ["hexlet", "games"],
     "autoload": {
         "files": [
-            "src/Games/Cli.php",
             "src/Games/Parity.php",
             "src/Games/Calc.php",
             "src/Games/Gcd.php",
@@ -28,7 +33,6 @@
             "src/Main.php"
         ] 
     },
-
     "scripts": {
         "phpcs": "phpcs"
     }

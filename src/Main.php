@@ -15,12 +15,9 @@ function startGame($annotation, $getQuestionAndAnswer)
 
     line("Hello, %s!", $userName);
 
-    $countWin = 0;
-
-    while ($countWin < MAX_COUNT_WINS) {
+    for ($i = 0; $i < MAX_COUNT_WINS; $i++) {
         $questionAndAnswer = $getQuestionAndAnswer();
-        $question = $questionAndAnswer[0];
-        $correctAnswer = $questionAndAnswer[1];
+        [$question, $correctAnswer] = $questionAndAnswer;
 
         line('Question: %s', $question);
 
@@ -28,10 +25,10 @@ function startGame($annotation, $getQuestionAndAnswer)
         
         if ($userAnswer === $correctAnswer) {
             line('Correct!');
-            $countWin++;
         } else {
             line("'%s' is wrong answer ;(. Correct answer was '%s'.", $userAnswer, $correctAnswer);
             line('Let\'s try again, %s!', $userName);
+            return false;
         }
     }
 
