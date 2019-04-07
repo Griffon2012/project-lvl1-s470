@@ -13,3 +13,5 @@ https://asciinema.org/a/zra2y9emF4R00qUmza54b2FyT
 наибольший общий делитель https://asciinema.org/a/3aM5w9J0nT3j0XiWqt208lMtw
 
 прогрессия https://asciinema.org/a/iUpGkG1CyFKmeK16oDRv4fG66
+
+простое число https://asciinema.org/a/8FtvjIcRimerYZ2ZVkGPklGqP
