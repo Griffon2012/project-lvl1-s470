@@ -6,10 +6,10 @@ use function cli\prompt;
 
 const MAX_COUNT_WINS = 3;
 
-function startGame($greeting, $getQuestionAndAnswer)
+function startGame($annotation, $getQuestionAndAnswer)
 {
     line('Welcome to the Brain Games!');
-    line($greeting);
+    line($annotation);
 
     $userName = prompt('May I have your name?');
 
@@ -18,9 +18,9 @@ function startGame($greeting, $getQuestionAndAnswer)
     $countWin = 0;
 
     while ($countWin < MAX_COUNT_WINS) {
-        $questionAndAnswer = call_user_func($getQuestionAndAnswer);
-        $question = $questionAndAnswer['question'];
-        $correctAnswer = $questionAndAnswer['correctAnswer'];
+        $questionAndAnswer = $getQuestionAndAnswer();
+        $question = $questionAndAnswer[0];
+        $correctAnswer = $questionAndAnswer[1];
 
         line('Question: %s', $question);
 
@@ -30,7 +30,7 @@ function startGame($greeting, $getQuestionAndAnswer)
             line('Correct!');
             $countWin++;
         } else {
-            line("'%s' is wrong answer ;(. Correct answer was '%s'.", $userAnswer, $questionAndAnswer['correctAnswer']);
+            line("'%s' is wrong answer ;(. Correct answer was '%s'.", $userAnswer, $correctAnswer);
             line('Let\'s try again, %s!', $userName);
         }
     }

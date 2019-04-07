@@ -1,7 +1,9 @@
 <?php
 namespace BrainGames\Games\Prime;
 
-const GRETTING = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+use function BrainGames\Main\startGame;
+
+const ANNOTATION = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 function run()
 {
@@ -10,10 +12,10 @@ function run()
     
         $correctAnswer = isPrime($question) ? 'yes' : 'no';
     
-        return ['question' => $question, 'correctAnswer' => $correctAnswer];
+        return [$question, $correctAnswer];
     };
 
-    \BrainGames\Main\startGame(GRETTING, $getQuestionAndAnswer);
+    startGame(ANNOTATION, $getQuestionAndAnswer);
 }
 
 function isPrime($number)

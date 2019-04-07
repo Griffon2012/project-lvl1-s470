@@ -1,7 +1,9 @@
 <?php
 namespace BrainGames\Games\Gcd;
 
-const GRETTING = 'Find the greatest common divisor of given numbers.';
+use function BrainGames\Main\startGame;
+
+const ANNOTATION = 'Find the greatest common divisor of given numbers.';
 
 function run()
 {
@@ -9,11 +11,12 @@ function run()
         $value1 = rand(1, 100);
         $value2 = rand(1, 100);
         $correctAnswer = (string) getGcd($value1, $value2);
+        $question = "$value1 $value2";
    
-        return ['question' => "$value1 $value2", 'correctAnswer' => $correctAnswer];
+        return [$question, $correctAnswer];
     };
 
-    \BrainGames\Main\startGame(GRETTING, $getQuestionAndAnswer);
+    startGame(ANNOTATION, $getQuestionAndAnswer);
 }
 
 function getGcd($value1, $value2)

@@ -1,7 +1,9 @@
 <?php
 namespace BrainGames\Games\Parity;
 
-const GRETTING = 'Answer "yes" if number even otherwise answer "no".';
+use function BrainGames\Main\startGame;
+
+const ANNOTATION = 'Answer "yes" if number even otherwise answer "no".';
 
 function run()
 {
@@ -9,10 +11,10 @@ function run()
         $question = rand(1, 100);
         $correctAnswer = isEven($question) ? 'yes' : 'no';
    
-        return ['question' => $question, 'correctAnswer' => $correctAnswer];
+        return [$question, $correctAnswer];
     };
 
-    \BrainGames\Main\startGame(GRETTING, $getQuestionAndAnswer);
+    startGame(ANNOTATION, $getQuestionAndAnswer);
 }
 
 function isEven($number)

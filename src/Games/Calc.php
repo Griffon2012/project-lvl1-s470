@@ -2,9 +2,10 @@
 namespace BrainGames\Games\Calc;
 
 use function BrainGames\getName;
+use function BrainGames\Main\startGame;
 
 const ACTIONS = ["+", "-", "*"];
-const GRETTING = 'What is the result of the expression?';
+const ANNOTATION = 'What is the result of the expression?';
 
 function run()
 {
@@ -17,10 +18,10 @@ function run()
         
         $question = "$value1 $action $value2";
     
-        return ['question' => $question, 'correctAnswer' => $correctAnswer];
+        return [$question, $correctAnswer];
     };
 
-    \BrainGames\Main\startGame(GRETTING, $getQuestionAndAnswer);
+    startGame(ANNOTATION, $getQuestionAndAnswer);
 }
 
 function getRandAction()
@@ -31,11 +32,11 @@ function getRandAction()
 function calc($value1, $value2, $action)
 {
     switch ($action) {
-        case ACTIONS[0]:
+        case '+':
             return $value1 + $value2;
-        case ACTIONS[1]:
+        case '-':
             return $value1 - $value2;
-        case ACTIONS[2]:
+        case '*':
             return $value1 * $value2;
     }
 }

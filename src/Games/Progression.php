@@ -1,7 +1,9 @@
 <?php
 namespace BrainGames\Games\Progression;
 
-const GRETTING = 'What number is missing in the progression?';
+use function BrainGames\Main\startGame;
+
+const ANNOTATION = 'What number is missing in the progression?';
 const COUNT_ELEMENT = 10;
 
 function run()
@@ -15,10 +17,10 @@ function run()
     
         $question = implode(' ', getProgressionWithHiddenElement($firstElement, $step, $hiddenIndexNumber));
     
-        return ['question' => $question, 'correctAnswer' => $correctAnswer];
+        return [$question, $correctAnswer];
     };
 
-    \BrainGames\Main\startGame(GRETTING, $getQuestionAndAnswer);
+    startGame(ANNOTATION, $getQuestionAndAnswer);
 }
 
 function getProgressionWithHiddenElement($firstElement, $step, $hiddenIndexNumber)
