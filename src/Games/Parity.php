@@ -1,17 +1,18 @@
 <?php
 namespace BrainGames\Games\Parity;
 
-function getGreeting()
-{
-    return 'Answer "yes" if number even otherwise answer "no".';
-}
+const GRETTING = 'Answer "yes" if number even otherwise answer "no".';
 
-function getQuestionAndAnswer()
+function run()
 {
-    $question = rand(1, 100);
-    $expectedResponse = isEven($question) ? 'yes' : 'no';
+    $getQuestionAndAnswer = function () {
+        $question = rand(1, 100);
+        $correctAnswer = isEven($question) ? 'yes' : 'no';
    
-    return ['question' => $question, 'answer' => $expectedResponse];
+        return ['question' => $question, 'correctAnswer' => $correctAnswer];
+    };
+
+    \BrainGames\Main\startGame(GRETTING, $getQuestionAndAnswer);
 }
 
 function isEven($number)

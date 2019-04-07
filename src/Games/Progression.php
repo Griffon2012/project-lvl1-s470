@@ -1,23 +1,24 @@
 <?php
 namespace BrainGames\Games\Progression;
 
-function getGreeting()
+const GRETTING = 'What number is missing in the progression?';
+
+function run()
 {
-    return 'What number is missing in the progression?';
-}
+    $getQuestionAndAnswer = function () {
+        $countElemInProgression = 10;
+        $step = rand(1, 5);
+        $firstElement = rand(1, 25);
+        $numberDeleteElem = rand(1, $countElemInProgression);
+    
+        $correctAnswer = $step * ($numberDeleteElem - 1) + $firstElement;
+    
+        $question = getStringWithoutElement($firstElement, $step, $countElemInProgression, $numberDeleteElem);
+    
+        return ['question' => $question, 'correctAnswer' => (string) $correctAnswer];
+    };
 
-function getQuestionAndAnswer()
-{
-    $countElemInProgression = 10;
-    $step = rand(1, 5);
-    $firstElement = rand(1, 25);
-    $numberDeleteElem = rand(1, $countElemInProgression);
-
-    $expectedResponse = $step * ($numberDeleteElem - 1) + $firstElement;
-
-    $question = getStringWithoutElement($firstElement, $step, $countElemInProgression, $numberDeleteElem);
-
-    return ['question' => $question, 'answer' => (string) $expectedResponse];
+    \BrainGames\Main\startGame(GRETTING, $getQuestionAndAnswer);
 }
 
 function getStringWithoutElement($firstElement, $step, $countElemInProgression, $numberDeleteElem)

@@ -3,45 +3,39 @@ namespace BrainGames\Games\Calc;
 
 use function BrainGames\getName;
 
-function getGreeting()
-{
-    return 'What is the result of the expression?';
-}
+const ACTIONS = ["+", "-", "*"];
+const GRETTING = 'What is the result of the expression?';
 
-function getQuestionAndAnswer()
+function run()
 {
-    $value1 = rand(1, 100);
-    $value2 = rand(1, 100);
-    $numberAction = rand(1, 3);
-    $action = getAction($numberAction);
-
-    $expectedResponse = (string) calc($value1, $value2, $action);
+    $getQuestionAndAnswer = function () {
+        $value1 = rand(1, 100);
+        $value2 = rand(1, 100);
+        $action = getRandAction();
     
-    $question = "$value1 $action $value2";
+        $correctAnswer = (string) calc($value1, $value2, $action);
+        
+        $question = "$value1 $action $value2";
+    
+        return ['question' => $question, 'correctAnswer' => $correctAnswer];
+    };
 
-    return ['question' => $question, 'answer' => $expectedResponse];
+    \BrainGames\Main\startGame(GRETTING, $getQuestionAndAnswer);
 }
 
-function getAction($numberAction)
+function getRandAction()
 {
-    switch ($numberAction) {
-        case 1:
-            return '+';
-        case 2:
-            return '-';
-        case 3:
-            return '*';
-    }
+    return ACTIONS[rand(0, count(ACTIONS)-1)];
 }
 
 function calc($value1, $value2, $action)
 {
     switch ($action) {
-        case '+':
+        case ACTIONS[0]:
             return $value1 + $value2;
-        case '-':
+        case ACTIONS[1]:
             return $value1 - $value2;
-        case '*':
+        case ACTIONS[2]:
             return $value1 * $value2;
     }
 }
