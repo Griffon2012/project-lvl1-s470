@@ -25,7 +25,7 @@ function run()
 
 function getRandAction()
 {
-    return ACTIONS[rand(0, count(ACTIONS)-1)];
+    return ACTIONS[rand(0, count(ACTIONS) - 1)];
 }
 
 function calc($value1, $value2, $action)
