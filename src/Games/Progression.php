@@ -2,18 +2,18 @@
 namespace BrainGames\Games\Progression;
 
 const GRETTING = 'What number is missing in the progression?';
+const COUNT_ELEMENT = 10;
 
 function run()
 {
     $getQuestionAndAnswer = function () {
-        $countElemInProgression = 10;
         $step = rand(1, 5);
         $firstElement = rand(1, 25);
-        $numberDeleteElem = rand(1, $countElemInProgression);
+        $hiddenIndexNumber = rand(0, (COUNT_ELEMENT - 1));
     
-        $correctAnswer = (string) ($step * ($numberDeleteElem - 1) + $firstElement);
+        $correctAnswer = (string) ($step * $hiddenIndexNumber + $firstElement);
     
-        $question = getStringWithoutElement($firstElement, $step, $countElemInProgression, $numberDeleteElem);
+        $question = implode(' ', getProgressionWithHiddenElement($firstElement, $step, $hiddenIndexNumber));
     
         return ['question' => $question, 'correctAnswer' => $correctAnswer];
     };
@@ -21,16 +21,15 @@ function run()
     \BrainGames\Main\startGame(GRETTING, $getQuestionAndAnswer);
 }
 
-function getStringWithoutElement($firstElement, $step, $countElemInProgression, $numberDeleteElem)
+function getProgressionWithHiddenElement($firstElement, $step, $hiddenIndexNumber)
 {
-    $lastElement = $firstElement + ($step * ($countElemInProgression - 1));
     $progression = [];
-    for ($i = $firstElement; $i <= $lastElement; $i += $step) {
-        if (count($progression) === $numberDeleteElem - 1) {
+    for ($i = 0; $i < COUNT_ELEMENT; $i++) {
+        if ($i === $hiddenIndexNumber) {
             $progression[] = '..';
         } else {
-            $progression[] = (string) $i;
+            $progression[] = (string) ($firstElement + $step * $i);
         }
     }
-    return implode(' ', $progression);
+    return $progression;
 }
