@@ -11,11 +11,11 @@ function run()
         $firstElement = rand(1, 25);
         $numberDeleteElem = rand(1, $countElemInProgression);
     
-        $correctAnswer = $step * ($numberDeleteElem - 1) + $firstElement;
+        $correctAnswer = (string) ($step * ($numberDeleteElem - 1) + $firstElement);
     
         $question = getStringWithoutElement($firstElement, $step, $countElemInProgression, $numberDeleteElem);
     
-        return ['question' => $question, 'correctAnswer' => (string) $correctAnswer];
+        return ['question' => $question, 'correctAnswer' => $correctAnswer];
     };
 
     \BrainGames\Main\startGame(GRETTING, $getQuestionAndAnswer);

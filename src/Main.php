@@ -15,7 +15,7 @@ function startGame($greeting, $getQuestionAndAnswer)
 
     line("Hello, %s!", $userName);
 
-    $countWin = 3;
+    $countWin = 0;
 
     while ($countWin < MAX_COUNT_WINS) {
         $questionAndAnswer = call_user_func($getQuestionAndAnswer);
