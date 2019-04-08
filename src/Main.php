@@ -16,8 +16,7 @@ function startGame($annotation, $getQuestionAndAnswer)
     line("Hello, %s!", $userName);
 
     for ($i = 0; $i < MAX_COUNT_WINS; $i++) {
-        $questionAndAnswer = $getQuestionAndAnswer();
-        [$question, $correctAnswer] = $questionAndAnswer;
+        [$question, $correctAnswer] = $getQuestionAndAnswer();
 
         line('Question: %s', $question);
 
